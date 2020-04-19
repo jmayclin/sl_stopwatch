@@ -1,0 +1,3 @@
+If you are reading this then you're a probably a snoopy individual. Although if you consider that I - james - am the person most likely to be reading it and am not particularly snoopy you could say that the person reading this is not statistically snoopy. Although if you are reading this and you are not the James that wrote this then it is a certainty that you are a snoopy individual. 
+
+While it might seem like you happened across some exciting private data, I regret to inform you that it is all rather pedestrian. Unless you happen to enjoy looking at the timecards of strangers in a double entry accounting structure, in which case you will not doubt find the contents of this repository to be absolutely riveting.
