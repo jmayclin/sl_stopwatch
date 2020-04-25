@@ -13,7 +13,7 @@ import sys
 import datetime
 
 # location of time card file
-kJournal = "./sl_time.dat" 
+kTimeCard = "./timecard.dat" 
 
 # number of recent accounts to list as options
 kAccountList = 5
@@ -62,7 +62,7 @@ def getLastAccount(lines):
     return getPreviousAccounts(lines)[0]
 
 def debug():
-    f = open(kJournal, 'r')
+    f = open(kTimeCard, 'r')
     lines = f.readlines()
     f.close()
     print(f"clockingOut call -> {clockingOut(lines)}")   
@@ -72,11 +72,11 @@ def debug():
 if __name__ == "__main__":
     debug()
     timestamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
-    f = open(kJournal, 'r')
+    f = open(kTimeCard, 'r')
     lines = f.readlines()
     f.close()
 
-    f = open(kJournal, 'a')
+    f = open(kTimeCard, 'a')
     if clockingOut(lines):
         print("clocking out")
         f.write(f"o {timestamp}\n\n")
