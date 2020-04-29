@@ -1,9 +1,6 @@
 '''
-usage:
-    clocking in: python punch_clock.py -i account1:account2
-    clocking out: python punch_clock.py -o
-
-usage: TODO
+punch_clock.py
+james mayclin
     run the script, automatically detects whether to clock in or out
     gives an option of categories to clock into based upon prvious values
     or specify a new one
@@ -19,7 +16,18 @@ kTimeCard = "./timecard.dat"
 kAccountList = 5
 
 # error message when you inevitably fail
-kError = "How do people like you make it through the day? I mean honestly, this shouldn't be that hard and yet here we are. All you needed to do was enter a number within a range. Maybe you skipped the day in preschool when we went over numberlines. Regardless, I just wanted to let you know that you are a disappointment. Good day.\n"
+
+# a text wrapping library woul make this much nicer
+# but I also don't care to deal with that right now
+# nor, I suspect, will anyone want to in the future
+kError = ("\n" +
+    "How do people like you make it through the day? I mean\n" +
+    "honestly, this shouldn't be that hard and yet here we\n" +
+    "are. All you needed to do was enter a number within a\n" +
+    "range. Maybe you skipped the day in preschool when we\n" +
+    "went over numberlines. Regardless, I just wanted to let\n" +
+    "you know that you are a disappointment. Good day.\n"
+)
 
 def clockingOut(lines):
     tokens = lines[-1].split()
@@ -46,7 +54,7 @@ def getAccount(lines):
     choice = int(input("choice:"))
     while (choice > len(previous) or choice < 0):
         print(kError)
-        choice = int(input("I guess you can try again. Maybe be less of a disappointment this time? "))
+        choice = int(input("I guess you can try again.\nMaybe be less of a disappointment this time? "))
 
     # enter custom account
     if choice == len(previous):
